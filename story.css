@@ -1,0 +1,212 @@
+.story-wrapper {
+  padding: 140px 5% 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.story-heading {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.story-visual img {
+  width: 100%;
+  border-left: 10px solid var(--maroon);
+  box-shadow: 20px 20px 0 var(--teal);
+}
+
+.story-content p {
+  color: var(--grey-text);
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.art-quote {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--orange);
+  margin-top: 30px;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.mv-card {
+  background: var(--dark-grey);
+  padding: 40px;
+  border-top: 4px solid var(--maroon);
+  border-right: 1px solid #222;
+  border-bottom: 1px solid #222;
+  border-left: 1px solid #222;
+}
+
+.mv-card h3 {
+  font-size: 1.8rem;
+  color: var(--orange);
+  margin-bottom: 15px;
+}
+
+.mv-card p {
+  color: var(--grey-text);
+  font-size: 1rem;
+}
+
+/* =========================================
+  MOBILE
+  ========================================= */
+@media screen and (max-width: 768px) {
+  .story-wrapper {
+    padding: 110px 20px 60px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Keep the existing H1 style essentially unchanged */
+  .story-heading {
+    font-size: 3rem;
+    margin-bottom: 45px;
+    line-height: 1.1;
+  }
+
+  /* -----------------------------------------
+    STORY CONTENT
+    ----------------------------------------- */
+  .story-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  /* H2 */
+  .story-content {
+    width: 100%;
+  }
+
+  .story-content h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+  }
+
+  /* Paragraphs */
+  .story-content p {
+    width: 100%;
+    margin-bottom: 22px;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  /* Quote */
+  .art-quote {
+    font-size: 1.35rem !important;
+    line-height: 1.5 !important;
+    margin-top: 25px;
+    margin-bottom: 35px !important;
+  }
+
+  /* -----------------------------------------
+    IMAGE
+    ----------------------------------------- */
+  .story-visual {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 60px;
+  }
+
+  .story-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-left: 6px solid var(--maroon);
+    box-shadow: 12px 12px 0 var(--teal);
+  }
+
+  /* -----------------------------------------
+    MISSION + VISION
+    -----------------------------------------
+    Change from 2 columns to ONE column.
+    Mission appears first, Vision underneath.
+    */
+
+  .mv-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+    margin-top: 0;
+  }
+
+  .mv-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 25px;
+  }
+
+  .mv-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .mv-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+}
+
+
+/* =========================================
+  SMALL PHONES
+  ========================================= */
+@media screen and (max-width: 480px) {
+  .story-wrapper {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .story-heading {
+    font-size: 2.8rem;
+  }
+
+  .story-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .story-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .art-quote {
+    font-size: 1.25rem !important;
+  }
+
+  .story-visual {
+    margin-bottom: 50px;
+  }
+
+  .mv-card {
+    padding: 28px 22px;
+  }
+
+  .mv-card h3 {
+    font-size: 1.5rem;
+  }
+}

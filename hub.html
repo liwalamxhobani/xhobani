@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hub | Xhobani</title>
+  <link rel="icon" href="logos/xhobani-logo-male-orange-without-text.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hub.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+  <aside id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h3>YOUR BAG</h3>
+      <i class="fa-solid fa-xmark close-cart" onclick="toggleCart()"></i>
+    </div>
+    <div id="cart-items-container" class="cart-items-container">
+      <p class="empty-msg">Your bag is currently empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cart-total-price">R 0.00</span>
+      </div>
+      <button id="main-checkout-btn" class="checkout-btn" onclick="handleCheckoutClick()">PROCEED TO CHECKOUT</button>
+    </div>
+  </aside>
+
+  <nav class="navbar" id="main-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="logos/xhobani-logo-female-white-without-text.png" alt="Xhobani Logo" class="brand-img">
+        <span class="brand-name">XHOBANI</span>
+      </a>
+      <div class="navbar_toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links">
+        <li class="navbar_items"><a href="story.html" class="navbar_links">Our Story</a></li>
+        <li class="navbar_items"><a href="hub.html" class="active" class="navbar_links">The Hub</a></li>
+      </ul>
+      <li class="cart-trigger" onclick="toggleCart()">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span id="cart-badge" class="navbar_links">0</span>
+      </li>
+    </div>
+  </nav>
+
+  <main class="hub-wrapper">
+    <header class="hub-intro">
+      <h1>THE <span class="text-maroon">HUB</span></h1>
+      <p>Click a brand to explore their unique pieces and add them to your bag.</p>
+    </header>
+
+    <div id="brand-grid" class="brand-grid"></div>
+  </main>
+
+  <div id="showcase-modal" class="modal-overlay">
+    <div class="modal-content">
+      <i class="fa-solid fa-xmark modal-close" onclick="closeShowcase()"></i>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-logo">XHOBANI</div>
+      <p class="footer-motto">For The Youth By The Youth</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 XHOBANI. ALL RIGHTS RESERVED.</p>
+        <p>WEBSITE BY: LIWALAM XHOBANI</p>
+      </div>
+    </div>
+  </footer>
+
+  <template id="tpl-hub-brand-card">
+    <div class="brand-card">
+      <img src="" alt="" class="card-img">
+      <div class="brand-label-overlay card-name"></div>
+    </div>
+  </template>
+
+  <template id="tpl-brand-header">
+    <div class="brand-identity-header">
+      <img src="" alt="Owner" class="owner-headshot">
+      <img src="" alt="Logo" class="brand-logo-small">
+      <div>
+        <h2 class="brand-title-text"></h2>
+        <p class="brand-director-text"></p>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-piece-item">
+    <div class="piece-item">
+      <div>
+        <img src="" alt="" class="main-piece-img">
+      </div>
+      <div>
+        <h3 class="piece-title-text"></h3>
+        <p class="piece-desc-text"></p>
+        <div class="thumb-row"></div>
+        <div class="selectors-row">
+          <select class="custom-select select-size">
+            <option value="S">Size: Small</option>
+            <option value="M">Size: Medium</option>
+            <option value="L">Size: Large</option>
+            <option value="XL">Size: X-Large</option> 
+            <option value="XXL">Size: XX-Large</option>   
+            <option value="XXXL">Size: XXX-Large</option>        
+          </select>
+          <select class="custom-select select-color">
+            <option value="Black">Color: Black</option>
+            <option value="White">Color: White</option>
+            <option value="Maroon">Color: Maroon</option>
+            <option value="Grey">Color: Grey</option>
+            <option value="Other">Color: Other</option>
+          </select>
+        </div>
+        <div class="custom-color-field" hidden>
+          <label>Enter your color</label>
+          <input type="text" class="custom-color-input" maxlength="30" autocomplete="off" placeholder="e.g. Lavender">
+          <small class="color-error" aria-live="polite"></small>
+        </div>
+        <div class="piece-price-text"></div>
+        <button class="checkout-btn btn-add-piece">ADD TO BAG</button>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-cart-item">
+    <div class="cart-item">
+      <div>
+        <h4 class="cart-item-title"></h4>
+        <small class="cart-item-brand"></small>
+        <span class="remove-item">Remove</span>
+      </div>
+      <div class="cart-item-price"></div>
+    </div>
+  </template>
+
+  <template id="tpl-order-summary">
+    <div>
+      <h3 class="summary-heading">ORDER SUMMARY</h3>
+      <p class="summary-total"></p>
+      <p class="summary-subtext">Click the button for each brand to send your order details via WhatsApp.</p>
+      <div class="summary-brands-list"></div>
+    </div>
+  </template>
+
+  <template id="tpl-brand-order-card">
+    <div class="brand-order-card">
+      <h4 class="brand-order-title"></h4>
+      <p class="brand-order-meta"></p>
+      <button class="wa-btn"></button>
+    </div>
+  </template>
+
+  <script src="data.js"></script>
+  <script src="hub.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

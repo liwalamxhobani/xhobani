@@ -1,0 +1,145 @@
+/* --- HERO SECTION --- */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2070') center/cover no-repeat;
+}
+
+.hero-overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-tagline {
+  color: var(--orange);
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 20px;
+  /* color: var(--maroon); */
+}
+
+.hero-sub {
+  color: var(--grey-text);
+  font-size: 1.2rem;
+  margin-bottom: 35px;
+}
+
+/* --- BRANDS & DROPS GRID --- */
+.latest-drops-section {
+  padding: 80px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand-card {
+  background: var(--dark-grey);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 4px solid var(--teal);
+  transition: var(--transition);
+}
+
+.brand-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--maroon);
+}
+
+.brand-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.brand-card:hover img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.brand-label-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.drop-card {
+  background: var(--dark-grey);
+  border: 1px solid #222;
+  border-left: 4px solid var(--maroon);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.drop-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.drop-card-brand {
+  color: var(--orange);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.drop-card-title {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.drop-card-desc {
+  color: var(--grey-text);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.drop-card-price {
+  font-size: 1.3rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+.center-btn {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.see-more-link {
+  display: inline-block;
+  width: auto;
+  padding: 15px 40px;
+  text-decoration: none;
+}

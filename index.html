@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xhobani | For The Youth By The Youth</title>
+  <link rel="icon" href="logos/xhobani-logo-male-orange-without-text.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar" id="main-navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="logos/xhobani-logo-male-orange-without-text.png" alt="Xhobani Logo" class="brand-img">
+        <span class="brand-name">XHOBANI</span>
+      </a>
+      <div class="navbar_toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links">
+        <li class="navbar_items"><a href="story.html" class="navbar_links">Our Story</a></li>
+        <li class="navbar_items"><a href="hub.html" class="navbar_links">The Hub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <p class="hero-tagline">FOR THE YOUTH BY THE YOUTH</p>
+        <h1 class="hero-title">XHOBANI</h1>
+        <p class="hero-sub">The official hub for South African local creators.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="latest-drops-section">
+    <h2 class="section-title">FEATURED BRANDS</h2>
+    <div id="home-brand-grid" class="brand-grid"></div>
+    <div class="center-btn">
+      <a href="hub.html" class="checkout-btn see-more-link">SEE MORE BRANDS</a>
+    </div>
+  </section>
+
+  <section class="latest-drops-section">
+    <h2 class="section-title">LATEST BRANDS</h2>
+    <div id="home-drops-grid" class="brand-grid"></div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-logo">XHOBANI</div>
+      <p class="footer-motto">For The Youth By The Youth</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 XHOBANI. ALL RIGHTS RESERVED.</p>
+        <p>WEBSITE BY: LIWALAM XHOBANI</p>
+      </div>
+    </div>
+  </footer>
+
+  <template id="tpl-brand-card">
+    <div class="brand-card">
+      <img src="" alt="" class="card-img">
+      <div class="brand-label-overlay card-name"></div>
+    </div>
+  </template>
+
+  <template id="tpl-drop-card">
+    <div class="drop-card">
+      <img src="" alt="" class="drop-img">
+      <div>
+        <span class="drop-card-brand"></span>
+        <h3 class="drop-card-title"></h3>
+        <p class="drop-card-desc"></p>
+      </div>
+      <div>
+        <div class="drop-card-price"></div>
+        <a href="hub.html" class="checkout-btn see-more-link">VIEW IN HUB</a>
+      </div>
+    </div>
+  </template>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
